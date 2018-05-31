@@ -2,22 +2,23 @@ package abenosan.game.combat;
 
 import java.util.Scanner;
 
-import abenosan.game.monster.Monster;
-import abenosan.game.monster.Player;
+import abenosan.game.player.Player;
+import abenosan.game.util.BaseCharacter;
+import abenosan.game.util.CallMonster;
 import abenosan.game.util.Dice;
 
-public class Combat {
+public class Combat{
 	// 戦闘メソッド
 	public static void combat(){
 		Player player = new Player();
-		Monster monster = new Monster();
+		BaseCharacter monster = (new CallMonster().getMonster());
 		Dice point = new Dice();
 		int point1;
 		boolean check = true;
 		System.out.println("--------------------------");
-		System.out.println("[モンスター名]:"+ monster.hp );
-		System.out.println("[ Level ]     :"+ monster.level );
-		System.out.println("[ HP / MP ]   :"+ monster.hp +"/"+monster.mp);
+		System.out.println("|[モンスター名]:"+ monster.name );
+		System.out.println("|[ Level ]     :"+ monster.level  );
+		System.out.println("|[ HP / MP ]   :"+ monster.hp +"/"+monster.mp );
 		System.out.println("--------------------------");
 
 		while(player.hp > 0 && monster.hp  > 0){	// PlayerとMonsterのHPがあれば戦闘開始
