@@ -17,35 +17,30 @@ public class Main {
 	public static void main(String[] args) {
 		OperationGame.setPlayerName();		/* PlayerNameの選択 */
 		int mass = 0;
+		System.out.println(NextRun.mass_1());
 		System.out.println("1:GAMEをはじめる 2:GAMEを終了する");
 		if(new Scanner(System.in).nextInt() == 1){
-			while(mass < 100){
+			while(mass < 100){					/* mass が 100以上になったらゲーム終了 */
 				System.out.println("[1] を入力してサイコロを振ってください。");
 				if(new Scanner(System.in).nextInt() == 1){
 					switch(Dice.diceMini()){
 					case 1:
-						NextRun.mass_1();	/* 戦闘メソッド */
-						mass += 1;
+						mass = NextRun.mass_1();	/* 戦闘メソッド */
 						break;
 					case 2:
-						NextRun.mass_2();	/* マス進むメソッド */
-						mass += 2;
+						mass = NextRun.mass_2();	/* マス進むメソッド */
 						break;
 					case 3:
-						NextRun.mass_3();	/* マス進むメソッド */
-						mass += 3;
+						mass = NextRun.mass_3();	/* マス進むメソッド */
 						break;
 					case 4:
-						NextRun.mass_4();	/* マス進むメソッド */
-						mass += 4;
+						mass = NextRun.mass_4();	/* マス進むメソッド */
 						break;
 					case 5:
-						NextRun.mass_5();	/* マス進むメソッド */
-						mass += 5;
+						mass = NextRun.mass_5();	/* マス進むメソッド */
 						break;
 					case 6:
-						NextRun.mass_6();	/* マス進むメソッド */
-						mass += 6;
+						mass = NextRun.mass_6();	/* マス進むメソッド */
 						break;
 					}
 				}

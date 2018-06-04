@@ -1,27 +1,20 @@
 package abenosan.game.player;
 
-import abenosan.game.util.BaseCharacter;
+
 import abenosan.game.util.Const;
 import abenosan.game.util.Dice;
 
-public class Player extends BaseCharacter{
-	public static String name = "";
-	public static int level = 0;
-	public static int hp = 0;
-	public static int mp = 0;
-	public static int exp = 1;
+public class Player{
+	public static String name = Const.Player_Name;
+	public static int level = 1;
+	public static int hp = 100;
+	public static int mp = 100;
+	public static int exp = 0;
+	public static int attack = 0;
+	public static int drug = 3;
 
-
-	public  Player(){
-		name = Const.Player_Name;
-		level = 1;
-		hp = 100;
-		mp = 50;
-		exp = 0;
-	}
-
-	public int attack(){
-		int damage = Dice.dice()+5;
+	public  static  int attack(){
+		int damage = Dice.dice()+attack;
 		return  damage;
 	}
 
@@ -30,7 +23,7 @@ public class Player extends BaseCharacter{
 		return a;
 	}
 
-	public void run(){
+	public static void run(){
 		System.out.println(Player.name+"は逃げることに成功した。");
 	}
 }
