@@ -1,6 +1,7 @@
 package abenosan.game.monsterList;
 
 import abenosan.game.util.BaseCharacter;
+import abenosan.game.util.Dice;
 
 public class Java extends BaseCharacter {
 	public Java(){
@@ -13,8 +14,8 @@ public class Java extends BaseCharacter {
 
 	@Override
 	public int attack() {
-
-		return 0;
+		int damage = Dice.dice() + this.level;
+		return damage;
 	}
 
 	@Override

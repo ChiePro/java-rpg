@@ -1,6 +1,7 @@
 package abenosan.game.monsterList;
 
 import abenosan.game.util.BaseCharacter;
+import abenosan.game.util.Dice;
 
 public class Cat extends BaseCharacter {
 	public Cat(){
@@ -13,8 +14,8 @@ public class Cat extends BaseCharacter {
 
 	@Override
 	public int attack() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+		int damage = Dice.dice() + this.level;
+		return damage;
 	}
 
 	@Override

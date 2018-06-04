@@ -13,6 +13,7 @@ public class LevelUpSystem{
 			System.out.println("攻撃力:"+Player.attack+ "→" + (Player.attack += Dice.dice()));	/* PlayerのHPを増加 */
 			if((m_exp - Player.exp)>0)
 			System.out.println("次のLvまで残り:"+(m_exp - Player.exp)+"exp");
-		};
+		}
+			System.out.println("次のLvまで残り:"+(m_exp - Player.exp)+"exp");
 	}
 }

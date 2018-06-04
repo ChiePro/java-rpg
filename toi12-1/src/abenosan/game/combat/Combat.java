@@ -25,11 +25,11 @@ public class Combat{
 		while(Player.hp > 0 && monster.hp  > 0){	// PlayerとMonsterのHPがあれば戦闘開始
 			int attack = Player.attack();
 			System.out.println("選択してください。");
-			System.out.println("1:攻撃 2:回復 3:逃げる");
+			System.out.println("1:攻撃 2:回復 3:逃げる 4:ステータスの確認");
 			System.out.println("--------------------------");
 			System.out.println("");
-			switch(new Scanner(System.in).next()){					// actionの選択
-			case "1":
+			switch(new Scanner(System.in).nextInt()){					// actionの選択
+			case 1:
 				System.out.println("[ "+Player.name + " ] が [ " + monster.name + " ] に ["+ attack +"] のダメージを与えた。" );
 				monster.hp = monster.hp - attack ;
 				if(monster.hp > 0){
@@ -43,18 +43,28 @@ public class Combat{
 					System.out.printf("┃[ HP/MP ]  :%3d / %-3d┃\n" , Player.hp , Player.mp);
 					System.out.println("┗━━━━━━━━━━━━━━━━━━━━━┛");}
 				break;
-			case "2":
-				if(Player.hp+20 <= 100){
+			case 2:
+				if(Player.hp+20 <= 100 && Player.drug >= 1){
 					Player.hp = Player.hp + 20 ;
 					Player.drug -=1;
 				System.out.println(" [ " + Player.name + " ] は薬草を1つ使い20回復した");
 				System.out.println("残り薬草:"+Player.drug);
+				}else{
+					System.out.println("これ以上回復できません");
 				}
 				break;
-			case "3":
+			case 3:
 				Player.run();
 				monster.hp = -1;
 				check = false;
+				break;
+			case 4:
+				System.out.println("┏━━━━━━━━Status━━━━━━━┓");
+				System.out.printf("┃[ 名前 ]    :%8s ┃\n" , Player.name);
+				System.out.printf("┃[ Level ]  :   %2d    ┃\n" , Player.level );
+				System.out.printf("┃[ HP/MP ]  :%3d / %-3d┃\n" , Player.hp , Player.mp);
+				System.out.printf("┃[ 薬草 ]    :   %2d    ┃\n", Player.drug);
+				System.out.println("┗━━━━━━━━━━━━━━━━━━━━━┛");
 				break;
 			default:
 				System.out.println("番号を選択し直してください。");
@@ -72,8 +82,8 @@ public class Combat{
 		if(monster.hp <= 0){
 			System.out.println("[" + Player.name+ "]は["+monster.name+"]を倒すことができた！");
 			System.out.println("[" + monster.exp + "] expを獲得した。");
-			Player.exp += monster.exp;
-			LevelUpSystem.getLevelUp();
+			Player.exp += monster.exp;			/* モンスターの経験値を獲得 */
+			LevelUpSystem.getLevelUp();			/* Level Up */
 		}
 
 	}
