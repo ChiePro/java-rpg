@@ -1,21 +1,20 @@
 package abenosan.game.monsterList;
 
 import abenosan.game.util.BaseCharacter;
-import abenosan.game.util.Dice;
 
-public class Slime extends BaseCharacter{
-	public Slime(){
-		name = "スライム";   /* 名前 */
-		level = 3;			/* Level */
-		hp = 15 ;			/* HP数値 */
-		mp = 5 ;			/* MP数値 */
-		exp = 10 ;			/* 経験値 */
+public class Zombie extends BaseCharacter {
+	public Zombie(){
+		name = "ゾンビ";  /* 名前 */
+		level = 53;			/* Level */
+		hp = 100;			/* HP数値 */
+		mp = 500;				/* MP数値 */
+		exp = 300;			/* 経験値 */
 	}
 
 	@Override
 	public int attack() {
-		int damage = Dice.dice();
-		return damage;
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
 	}
 
 	@Override
@@ -29,5 +28,4 @@ public class Slime extends BaseCharacter{
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
-
 }

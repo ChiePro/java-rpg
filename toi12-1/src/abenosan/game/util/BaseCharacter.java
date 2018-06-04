@@ -1,10 +1,10 @@
 package abenosan.game.util;
 public abstract class BaseCharacter{
-	public String name ;   /* 名前 */
+	public String name ;	/* 名前 */
 	public int level;		/* Level */
 	public int hp;			/* HP数値 */
 	public int mp;			/* MP数値 */
-	public int exp;		/* 経験値 */
+	public int exp;			/* 経験値 */
 
 
 	/**
@@ -22,7 +22,5 @@ public abstract class BaseCharacter{
 	 * @return
 	 */
 	public abstract void run();
-
-
 	}
 
