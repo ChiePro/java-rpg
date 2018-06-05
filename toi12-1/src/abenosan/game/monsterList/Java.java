@@ -9,12 +9,12 @@ public class Java extends BaseCharacter {
 		level = 99;			/* Level */
 		hp = 999;			/* HP数値 */
 		mp = 999;				/* MP数値 */
-		exp = 6000;			/* 経験値 */
+		exp = 99999999;			/* 経験値 */
 	}
 
 	@Override
 	public int attack() {
-		int damage = Dice.dice() + this.level;
+		int damage = Dice.dice() + this.exp;
 		return damage;
 	}
 

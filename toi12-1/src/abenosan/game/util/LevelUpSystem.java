@@ -3,8 +3,9 @@ package abenosan.game.util;
 import abenosan.game.player.Player;
 
 public class LevelUpSystem{
+	public static int m_exp = Player.level + 50;
 	public static void getLevelUp(){
-		int m_exp = Player.level + 50;
+
 		while(Player.exp > m_exp && Player.level <= 99 ){			/* プレイヤーLvが99以下ならば実行 */
 			m_exp *=1.2;											/* Lvが上がるごとに経験値を1.2倍にする */
 			Player.level ++;

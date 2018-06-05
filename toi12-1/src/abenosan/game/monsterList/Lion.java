@@ -8,7 +8,7 @@ public class Lion extends BaseCharacter {
 		name = "ライオン";  /* 名前 */
 		level = 63;			/* Level */
 		hp = 126;			/* HP数値 */
-		mp = 999;				/* MP数値 */
+		mp = 48;				/* MP数値 */
 		exp = 700;			/* 経験値 */
 	}
 
